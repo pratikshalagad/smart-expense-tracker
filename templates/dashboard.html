@@ -1,0 +1,30 @@
+<h2>Dashboard</h2>
+
+<a href="/">Back</a>
+
+<h3>Total Spent: ₹{{ total_spent }}</h3>
+
+{% if highest_category %}
+<p>Highest Category: <b>{{ highest_category }}</b> (₹{{ highest_amount }})</p>
+{% endif %}
+
+<canvas id="chart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const labels = {{ categories | tojson }};
+const totals = {{ totals | tojson }};
+
+const data = {
+  labels: labels,
+  datasets: [{
+    data: totals
+  }]
+};
+
+new Chart(document.getElementById("chart"), {
+  type: "pie",
+  data: data
+});
+</script>
