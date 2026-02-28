@@ -92,6 +92,3 @@ This project demonstrates full-stack development skills including:
 ## Author
 
 **Pratiksha Lagad**
-
-
-This project is open source and available under the MIT License.
